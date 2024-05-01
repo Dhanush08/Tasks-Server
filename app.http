@@ -2,8 +2,8 @@ POST http://localhost:3000/users/
 Content-Type: application/json
 
 {
-    "username": "Gad2000",
-    "password": "gad_2000"
+    "username": "Zad2000",
+    "password": "zad_2000"
 }
 
 ###
@@ -23,12 +23,12 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdhZDIwMDAiLCJpYXQiOjE3MTQ1NjY4MTJ9.xtrLfOSr1fZ0Cq1ZyW88pNvaPJsKe4VcZw1bncdWbYM
 
 {
-    "title": "Kotlin assignment",
-    "description": "Complete the Kotlin assignment",
+    "title": "Java assignment",
+    "description": "Complete the JAVA assignment",
     "status": "INCOMPLETE",
-    "assigneeId": 6,
-    "createdAt": "2024-05-01 20:20:00",
-    "updatedAt": "2024-05-01 20:20:00"
+    "assigneeId": 3,
+    "createdAt": "2024-05-01 20:40:00",
+    "updatedAt": "2024-05-01 20:40:00"
 }
 
 ###
@@ -48,8 +48,8 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdhZDIwMDAiLCJpYXQiOjE3MTQ1NjY4MTJ9.xtrLfOSr1fZ0Cq1ZyW88pNvaPJsKe4VcZw1bncdWbYM
 
 {
-    "title": "Ruby assignment",
-    "description": "Complete the Ruby assignment",
+    "title": "C assignment",
+    "description": "Complete the C assignment",
     "status": "INCOMPLETE"
 }
 
