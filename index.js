@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 import { format } from 'date-fns';
 
 const app = express(); // express server instance
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 var database = null
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
