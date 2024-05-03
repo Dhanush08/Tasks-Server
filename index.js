@@ -186,9 +186,7 @@ app.post('/tasks/', authenticateToken, async (request, response) => {
       title,
       description,
       status,
-      assigneeId,
-      createdAt,
-      updatedAt
+      assigneeId
     } = request.body;
     // validations
     if (!title) {
@@ -215,24 +213,12 @@ app.post('/tasks/', authenticateToken, async (request, response) => {
         message: "Assignee ID is required"
       });
     }
-    if (!createdAt) {
-      return response.status(404).send({
-        success: false,
-        message: "Datetime of creation is required"
-      });
-    }
-    if (!updatedAt) {
-      return response.status(404).send({
-        success: false,
-        message: "Datetime of updation is required"
-      });
-    }
     // assignee validation
     const selectUserIdsQuery = `SELECT id FROM users`;
     const idsArray = await database.all(selectUserIdsQuery);
     const isAssigneePresent = idsArray.some((item) => {
       return item.id === assigneeId;
-    })
+    });
     // unregistered assignee
     if (!isAssigneePresent) {
       return response.status(404).send({
@@ -241,6 +227,8 @@ app.post('/tasks/', authenticateToken, async (request, response) => {
       });
     }
     // task insertion
+    const today = new Date();
+    const formattedDateTime = format(today, 'yyyy-MM-dd HH:mm:ss');
     const addTaskQuery = `
       INSERT INTO
       tasks (
@@ -256,8 +244,8 @@ app.post('/tasks/', authenticateToken, async (request, response) => {
         '${description}', 
         '${status}', 
         '${assigneeId}', 
-        '${createdAt}', 
-        '${updatedAt}'
+        '${formattedDateTime}', 
+        '${formattedDateTime}'
       );`;
     const dbResponse = await database.run(addTaskQuery);
     const taskID = dbResponse.lastID;

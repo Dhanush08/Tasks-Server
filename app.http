@@ -26,9 +26,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdhZ
     "title": "Java assignment",
     "description": "Complete the JAVA assignment",
     "status": "INCOMPLETE",
-    "assigneeId": 3,
-    "createdAt": "2024-05-01 20:40:00",
-    "updatedAt": "2024-05-01 20:40:00"
+    "assigneeId": 3
 }
 
 ###
