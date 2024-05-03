@@ -1,3 +1,5 @@
+Published API url: https://tasks-server-lgp0.onrender.com
+
 ### 1. API Design
 
 **Objective:** Define RESTful API endpoints for CRUD operations on tasks.
