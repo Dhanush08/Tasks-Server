@@ -9,31 +9,31 @@ import { format } from 'date-fns';
 
 const app = express(); // express server instance
 const PORT = process.env.PORT || 3000;
-var database = null
+var database = null;
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
-const databasePath = path.join(__dirname, 'userTasksData.db')
+const databasePath = path.join(__dirname, 'userTasksData.db');
 
 // used to recognize the incoming request object as JSON object and parses it
-app.use(express.json())
+app.use(express.json());
 
 const initiateDBandServer = async () => {
   try {
     database = await open({
       filename: databasePath,
       driver: sqlite3.Database,
-    })
+    });
     app.listen(PORT, () => {
-      console.log(`Server Running at http://localhost:${PORT}/`)
+      console.log(`Server Running at http://localhost:${PORT}/`);
     })
   } catch (error) {
-    console.log(`DB Error: ${error}`)
-    process.exit(1)
+    console.log(`DB Error: ${error}`);
+    process.exit(1);
   }
-}
+};
 
 // initializing database and server
-initiateDBandServer()
+initiateDBandServer();
 
 // register user API
 app.post('/users/', async (request, response) => {
